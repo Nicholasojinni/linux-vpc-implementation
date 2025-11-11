@@ -1,0 +1,11 @@
+logs/*.log
+logs/*.txt
+logs/*.pid
+__pycache__/
+*.pyc
+.vscode/
+*.swp
+.DS_Store
+/var/run/vpcctl/
+*.bak
+EOF

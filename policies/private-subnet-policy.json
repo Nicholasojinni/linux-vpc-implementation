@@ -1,0 +1,30 @@
+{
+  "version": "1.0",
+  "subnet": "10.0.2.0/24",
+  "namespace": "myvpc-private-subnet",
+  "description": "Security policy for private database servers",
+  "ingress": [
+    {
+      "port": 5432,
+      "protocol": "tcp",
+      "source": "10.0.1.0/24",
+      "action": "allow",
+      "description": "Allow PostgreSQL from public subnet only"
+    },
+    {
+      "port": 8081,
+      "protocol": "tcp",
+      "source": "10.0.0.0/16",
+      "action": "allow",
+      "description": "Allow test server access from VPC"
+    }
+  ],
+  "egress": [
+    {
+      "destination": "10.0.0.0/16",
+      "action": "allow",
+      "description": "Allow traffic within VPC"
+    }
+  ]
+}
+EOF

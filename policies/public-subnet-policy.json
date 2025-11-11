@@ -1,0 +1,36 @@
+{
+  "version": "1.0",
+  "subnet": "10.0.1.0/24",
+  "namespace": "demo-public",
+  "description": "Security policy for public web servers",
+  "ingress": [
+    {
+      "port": 80,
+      "protocol": "tcp",
+      "source": "0.0.0.0/0",
+      "action": "allow",
+      "description": "Allow HTTP from anywhere"
+    },
+    {
+      "port": 8080,
+      "protocol": "tcp",
+      "source": "0.0.0.0/0",
+      "action": "allow",
+      "description": "Allow test HTTP server"
+    },
+    {
+      "port": 22,
+      "protocol": "tcp",
+      "source": "0.0.0.0/0",
+      "action": "deny",
+      "description": "Block SSH from anywhere"
+    }
+  ],
+  "egress": [
+    {
+      "destination": "0.0.0.0/0",
+      "action": "allow",
+      "description": "Allow all outbound traffic"
+    }
+  ]
+}
