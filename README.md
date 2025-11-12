@@ -559,11 +559,11 @@ cat /var/run/vpcctl/br-demo.json | jq
 
 ## ��� Demo
 
-[Link to demo video showing project in action]
+[https://drive.google.com/file/d/1UGRdnNnnhlovnby0UI43sFy1UwzdRTnd/view?usp=sharing]
 
 ## ��� Blog Post
 
-Read the complete tutorial: [Building a VPC on Linux from Scratch](https://medium.com/@ojinnin/building-your-own-virtual-private-cloud-vpc-on-linux-from-scratch-a4ca47a08adf)
+Read the complete tutorial: [https://medium.com/@ojinnin/building-your-own-virtual-private-cloud-vpc-on-linux-from-scratch-a4ca47a08adf]
 
 ## ��� Contributing
 
@@ -595,9 +595,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Your Name**
 
-- GitHub: [@yourusername](https://github.com/Nicholasojinni)
-- LinkedIn: [Your Name](https://www.linkedin.com/in/ojinni-oluwafemi11/)
-- Blog: [your-blog.com](https://https://medium.com/@ojinnin/building-your-own-virtual-private-cloud-vpc-on-linux-from-scratch-a4ca47a08adf)
+- GitHub: [https://github.com/Nicholasojinni]
+- LinkedIn: [https://www.linkedin.com/in/ojinni-oluwafemi11/]
+- Blog: [https://https://medium.com/@ojinnin/building-your-own-virtual-private-cloud-vpc-on-linux-from-scratch-a4ca47a08adf]
 
 ## ��� Acknowledgments
 
