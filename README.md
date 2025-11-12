@@ -6,7 +6,7 @@
 
 A complete Virtual Private Cloud (VPC) implementation using Linux networking primitives including network namespaces, veth pairs, bridges, and iptables.
 
-## í¾¯ Overview
+## ï¿½ï¿½ï¿½ Overview
 
 This project recreates the fundamentals of a cloud VPC entirely on Linux. Using native networking tools, it provides VPC functionality including:
 
@@ -19,7 +19,7 @@ This project recreates the fundamentals of a cloud VPC entirely on Linux. Using 
 - **Security Groups** - firewall rules using iptables
 - **Complete Automation** via CLI tool
 
-## í³‹ Table of Contents
+## ï¿½ï¿½ï¿½ Table of Contents
 
 - [Features](#features)
 - [Architecture](#architecture)
@@ -56,7 +56,7 @@ This project recreates the fundamentals of a cloud VPC entirely on Linux. Using 
 - JSON-based metadata storage
 - Idempotent operations
 
-## í¿—ï¸ Architecture
+## ï¿½ï¿½ï¿½ï¸ Architecture
 
 ```
                           Internet
@@ -93,7 +93,7 @@ This project recreates the fundamentals of a cloud VPC entirely on Linux. Using 
 | **Security Group** | Firewall rules | iptables chains |
 | **Peering** | Inter-VPC link | Veth pair + routes |
 
-## í³¦ Prerequisites
+## ï¿½ï¿½ï¿½ Prerequisites
 
 ### System Requirements
 
@@ -126,12 +126,12 @@ python3 --version     # Python 3.8+
 jq --version          # JSON processor
 ```
 
-## íº€ Installation
+## ï¿½ï¿½ï¿½ Installation
 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/vpc-project.git
+git clone https://github.com/Nicholasojinni/linux-vpc-implementation.git
 cd vpc-project
 ```
 
@@ -161,7 +161,7 @@ mkdir -p logs policies tests
 sudo mkdir -p /var/run/vpcctl
 ```
 
-## í¾® Quick Start
+## ï¿½ï¿½ï¿½ Quick Start
 
 ### Basic VPC Setup (5 minutes)
 
@@ -205,7 +205,7 @@ sudo ./vpcctl delete-vpc myvpc
 ./cleanup-all.sh
 ```
 
-## í³– Usage
+## ï¿½ï¿½ï¿½ Usage
 
 ### Command Reference
 
@@ -226,7 +226,7 @@ sudo ./vpcctl create-vpc production 10.0.0.0/16
 #### Add Subnet
 
 ```bash
-./vpcctl add-subnet <vpc-name> <subnet-name> <cidr-block> <type>
+./vpcctl add-subnet br-demo <subnet-name> <cidr-block> <type>
 
 # Examples
 sudo ./vpcctl add-subnet production web-subnet 10.0.1.0/24 public
@@ -242,7 +242,7 @@ sudo ./vpcctl add-subnet production db-subnet 10.0.2.0/24 private
 #### Setup NAT Gateway
 
 ```bash
-./vpcctl setup-nat <vpc-name> [internet-interface]
+./vpcctl setup-nat br-demo [internet-interface]
 
 # Example
 sudo ./vpcctl setup-nat production eth0
@@ -336,7 +336,7 @@ sudo ip netns exec myvpc-public-subnet iptables -L
 sudo ip netns exec myvpc-public-subnet bash  # Interactive shell
 ```
 
-## í·ª Testing
+## ï¿½ï¿½ï¿½ Testing
 
 ### Run Test Suite
 
@@ -412,7 +412,7 @@ sudo ip netns exec myvpc-private-subnet iperf3 -c 10.0.1.10
 sudo ip netns exec myvpc-public-subnet ping -c 100 10.0.2.10 | tail -n 1
 ```
 
-## í³ Project Structure
+## ï¿½ï¿½ï¿½ Project Structure
 
 ```
 vpc-project/
@@ -458,7 +458,7 @@ vpc-project/
 | `logs/vpcctl.log` | Operation logs |
 | `policies/*.json` | Security group definitions |
 
-## í´§ Troubleshooting
+## ï¿½ï¿½ï¿½ Troubleshooting
 
 ### Common Issues
 
@@ -554,18 +554,18 @@ sudo ip netns exec <namespace> tcpdump -i any
 tail -f logs/vpcctl.log
 
 # View VPC details
-cat /var/run/vpcctl/<vpc-name>.json | jq
+cat /var/run/vpcctl/br-demo.json | jq
 ```
 
-## í¾¥ Demo
+## ï¿½ï¿½ï¿½ Demo
 
 [Link to demo video showing project in action]
 
-## í³ Blog Post
+## ï¿½ï¿½ï¿½ Blog Post
 
-Read the complete tutorial: [Building a VPC on Linux from Scratch](your-blog-url)
+Read the complete tutorial: [Building a VPC on Linux from Scratch](https://medium.com/@ojinnin/building-your-own-virtual-private-cloud-vpc-on-linux-from-scratch-a4ca47a08adf)
 
-## í´ Contributing
+## ï¿½ï¿½ï¿½ Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
@@ -573,7 +573,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ```bash
 # Fork and clone the repo
-git clone https://github.com/yourusername/vpc-project.git
+git clone https://github.com/Nicholasojinni/linux-vpc-implementation.git
 cd vpc-project
 
 # Create a feature branch
@@ -587,25 +587,25 @@ git commit -am "Add your feature"
 git push origin feature/your-feature-name
 ```
 
-## í³„ License
+## ï¿½ï¿½ï¿½ License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## í±¤ Author
+## ï¿½ï¿½ï¿½ Author
 
 **Your Name**
 
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your Name](https://linkedin.com/in/yourprofile)
-- Blog: [your-blog.com](https://your-blog.com)
+- GitHub: [@yourusername](https://github.com/Nicholasojinni)
+- LinkedIn: [Your Name](https://www.linkedin.com/in/ojinni-oluwafemi11/)
+- Blog: [your-blog.com](https://https://medium.com/@ojinnin/building-your-own-virtual-private-cloud-vpc-on-linux-from-scratch-a4ca47a08adf)
 
-## í¹ Acknowledgments
+## ï¿½ï¿½ï¿½ Acknowledgments
 
 - HNG Internship Program
 - Linux Network Namespace documentation
 - iptables community resources
 
-## í³š Additional Resources
+## ï¿½ï¿½ï¿½ Additional Resources
 
 - [HNG Internship](https://hng.tech/internship)
 - [HNG Premium](https://hng.tech/premium)
@@ -617,6 +617,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 â­ **Star this repo** if you found it helpful!
 
-í°› **Found a bug?** [Open an issue](https://github.com/yourusername/vpc-project/issues)
+ï¿½ï¿½ï¿½ **Found a bug?** [Open an issue](https://github.com/Nicholasojinni/vpc-project/issues)
 
-í²¡ **Have a suggestion?** [Start a discussion](https://github.com/yourusername/vpc-project/discussions)
+ï¿½ï¿½ï¿½ **Have a suggestion?** [Start a discussion](https://github.com/Nicholasojinni/vpc-project/discussions)
